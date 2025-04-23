@@ -271,8 +271,8 @@ if __name__ == '__main__':
 ## 📎 Credits Team Members
 
 **Design & Code by**: [Keval Ravani](https://github.com/Keval10github)
-**Design & Code by**: [Jay Rajodiya](https://github.com/JayRajodiya)
-**Design & Code by**: [Angel Jagaria]()
+[Jay Rajodiya](https://github.com/JayRajodiya)
+[Angel Jagaria]()
 ---
 
 
