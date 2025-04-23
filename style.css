@@ -1,0 +1,21 @@
+/* static/style.css */
+body {
+    font-family: 'Century Gothic', monospace;
+    background: #a5d4ec;
+}
+
+#doodleCanvas {
+    border: 2px solid #3572A5;
+    margin: 20px;
+}
+
+.search-box {
+    margin: 20px 0;
+}
+
+#results {
+    margin-top: 20px;
+    padding: 150px;
+    background: rgb(222, 82, 82);
+    border-radius: 5px;
+}

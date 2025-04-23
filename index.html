@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excel Search</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #CADCFC; /* Light blue background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Background Image: Python Logo merged with background */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.cleanpng.com/png-python-logo-python-icon-symbolizes-flexibility-ada-7963790.png'); /* Fixed direct image URL */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.05;  /* Subtle and transparent background image */
+            pointer-events: none;  /* Allow interaction with content */
+        }
+
+        h1 {
+            margin-top: 40px;
+            color: #00246B; /* Dark blue for heading */
+            font-size: 2.5rem;
+        }
+
+        form {
+            margin-top: 20px;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ✅ Transition for button and input in one go */
+        button, input[type="text"] {
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"] {
+            padding: 10px 15px;
+            width: 250px;
+            border: 2px solid #8AB6F9; /* Accent color for inputs */
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #00246B; /* Dark blue on focus */
+            box-shadow: 0 0 5px rgba(0, 36, 107, 0.3);
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #8AB6F9; /* Accent color for buttons */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00246B; /* Dark blue on hover */
+        }
+
+        table {
+            margin-top: 30px;
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 900px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        th {
+            background-color: #8AB6F9; /* Accent color for table headers */
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f3f4f6;
+        }
+
+        p {
+            margin-top: 20px;
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        /* Loader Style */
+        #loader {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #00246B; /* Dark blue for loader */
+        }
+
+        /* Alert Style for No Results */
+        .alert {
+            padding: 12px 20px;
+            background-color: #fee2e2;
+            border-left: 6px solid #b91c1c;
+            margin: 20px auto;
+            width: fit-content;
+            border-radius: 6px;
+            color: #7f1d1d;
+        }
+
+        /* Footer Style */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #00246B; /* Dark blue for footer */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #8AB6F9; /* Accent color for link */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Python Glossary</h1>
+
+    <!-- Loader Element (Hidden Initially) -->
+    <div id="loader" style="display:none">Searching...</div>
+
+    <form method="post" onsubmit="showLoader()">
+        <input type="text" name="search" placeholder="Enter search term" value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if results %}
+        <h2 style="margin-top: 40px; color: #374151;">Results:</h2>
+        <table>
+            <tr>
+                {% for key in results[0].keys() %}
+                    <th>{{ key }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in results %}
+                <tr>
+                    {% for cell in row.values() %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    {% elif query %}
+        <!-- Display No Results Found Message using Alert Style -->
+        <div class="alert">
+            No results found for "{{ query }}".
+        </div>
+    {% endif %}
+
+    <script>
+        // Show the loader when the form is submitted
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+        }
+    </script>
+
+    <!-- Footer with Source Code Link -->
+    <footer>
+        For Source Code - <a href="https://github.com/your-repo-link" target="_blank">Click Here</a>
+    </footer>
+
+</body>
+</html>
