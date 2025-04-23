@@ -1,5 +1,5 @@
 
-# 📘 Python Glossary Excel Search Web App
+# 📘 Python Glossary
 
 A Flask-based web application that allows users to search data from an Excel file in real time. Features a clean and modern UI with a responsive layout and interactive elements.
 
@@ -268,10 +268,11 @@ if __name__ == '__main__':
 
 ---
 
-## 📎 Credits
+## 📎 Credits Team Members
 
 **Design & Code by**: [Keval Ravani](https://github.com/Keval10github)
-
+**Design & Code by**: [Jay Rajodiya]()
+**Design & Code by**: [Angel Jagaria]()
 ---
 
 
