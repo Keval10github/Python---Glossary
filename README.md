@@ -134,7 +134,7 @@ if __name__ == '__main__':
 
 ## 📎 Credits
 
-**Design & Code by**: [YourName](
+**Design & Code by**: [Keval Ravani](
 # 📘 Python Glossary Excel Search Web App
 
 A Flask-based web application that allows users to search data from an Excel file in real time. Features a clean and modern UI with a responsive layout and interactive elements.
@@ -270,8 +270,8 @@ if __name__ == '__main__':
 
 ## 📎 Credits Team Members
 
-**Design & Code by**: [Keval Ravani](https://github.com/Keval10github)
-[Jay Rajodiya](https://github.com/JayRajodiya)
+**Design & Code by**: [Keval Ravani](https://github.com/Keval10github),
+[Jay Rajodiya](https://github.com/JayRajodiya),
 [Angel Jagaria]()
 ---
 
