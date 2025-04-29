@@ -272,7 +272,7 @@ if __name__ == '__main__':
 
 **Design & Code by**: [Keval Ravani](https://github.com/Keval10github),
 [Jay Rajodiya](https://github.com/JayRajodiya),
-[Angel Jagaria]()
+[Angel Jagaria](https://github.com/angeljagaria25)
 ---
 
 
